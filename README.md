@@ -1,2 +1,2 @@
-# https-github.com-nybomavendas-nybomaburguer
+-nybomavendas-nybomaburguer
 cardapio digital nyboma burguer e pizzaria
