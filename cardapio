@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyboma Burguer - Vila Manoel Sátiro</title>
+    <style>
+        body { background-color: #000; color: #fff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 20px; text-align: center; }
+        .container { max-width: 600px; margin: auto; border: 2px solid #ffca28; border-radius: 20px; padding: 20px; background-color: #1a1a1a; }
+        h1 { color: #ffca28; margin-bottom: 5px; }
+        .item { background: #222; border: 1px solid #333; margin: 15px 0; padding: 15px; border-radius: 10px; text-align: left; }
+        .price { color: #4caf50; font-weight: bold; }
+        .input-group { margin-top: 20px; text-align: left; }
+        input, textarea { width: 100%; padding: 12px; margin: 8px 0; border-radius: 8px; border: none; background: #333; color: #fff; box-sizing: border-box; }
+        .btn-whatsapp { background-color: #25d366; color: white; border: none; padding: 18px; border-radius: 10px; font-weight: bold; cursor: pointer; width: 100%; font-size: 18px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🍔 NYBOMA BURGUER</h1>
+        <p>Delivery - Vila Manoel Sátiro</p>
+
+        <div class="item">
+            <h3>Nyboma Classic</h3>
+            <p>Pão premium, blend 160g, cheddar, cebola caramelizada e molho.</p>
+            <span class="price">R$ 28,00</span>
+        </div>
+
+        <div class="input-group">
+            <label>Seu Nome:</label>
+            <input type="text" id="nome_cliente" placeholder="Como podemos te chamar?">
+            
+            <label>Endereço Completo:</label>
+            <textarea id="endereco_cliente" rows="3" placeholder="Rua, número, bairro e referência"></textarea>
+            
+            <button class="btn-whatsapp" onclick="finalizarPedido()">ENVIAR PEDIDO AGORA</button>
+        </div>
+    </div>
+
+    <script>
+        function finalizarPedido() {
+            const nome = document.getElementById('nome_cliente').value;
+            const endereco = document.getElementById('endereco_cliente').value;
+            const zap = "5585994157158";
+            
+            if(!nome || !endereco) {
+                alert("Por favor, preencha o nome e o endereço!");
+                return;
+            }
+
+            const mensagem = `*NOVO PEDIDO - NYBOMA*\n\n*Cliente:* ${nome}\n*Endereço:* ${endereco}\n\n*Pedido:* 1x Nyboma Classic`;
+            window.open(`https://wa.me/${zap}?text=${encodeURIComponent(mensagem)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
